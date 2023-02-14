@@ -1,0 +1,24 @@
+.important { color: red; }
+.important { font-weight: bold; }
+
+body { background-color: #ddd; }
+p { 
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.4;
+}
+pre {
+  font-family: 'Iosevka';
+  font-size: 14pt;
+}
+main {
+  background-color: white;
+  border: 2px solid black;
+  padding: 1rem;
+}
+h1 {
+  font-size: 33pt;
+}
+main section h1 {
+  font-size: 22pt;
+  color: green;
+}
