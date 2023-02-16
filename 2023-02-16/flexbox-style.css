@@ -1,0 +1,41 @@
+
+body {
+  border: 3px solid black;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  padding: 0;
+  margin: 0;
+}
+#a {
+  /* width: 18rem; */
+  height: 2rem;
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#a span {
+  border: 1px solid white;
+}
+#b {
+  flex: 1;
+  /* height: 15rem; */
+  /* width: 3rem; */
+  background-color: green;
+}
+#c {
+  flex: 2;
+  /* height: 8rem; */
+  /* width: 8rem; */
+  border-radius: 4rem;
+  background-color: blue;
+}
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
