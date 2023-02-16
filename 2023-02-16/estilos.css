@@ -72,3 +72,11 @@ table th {
   text-align: left;
 }
 
+svg {
+  width: 6rem;
+  height: 5rem;
+  position: sticky;
+  object-fit: cover;
+  top: 0;
+  right: 0;
+}
