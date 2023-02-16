@@ -45,3 +45,16 @@ footer {
 .menu ul li:hover {
   background-color: #ddd;
 }
+table {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+table th, table td {
+  border: 1px solid blue;
+  padding: .3rem .5rem;
+}
+table th {
+  text-align: left;
+}
