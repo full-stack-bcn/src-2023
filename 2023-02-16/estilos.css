@@ -1,3 +1,8 @@
+body {
+  font-size: 10pt;
+  margin: 0;
+  padding: 0;
+}
 h1 {
   font-size: 18pt;
 }
@@ -7,4 +12,36 @@ h1 .moderno {
 }
 h1 strong {
   background-color: grey;
+}
+.test {
+  display: inline-block;
+  width: 5rem;
+  height: 3rem;
+  border: 1px solid red;
+  font-size: 1rem;
+  padding: 1rem;
+  padding-top: 3rem;
+  background-color: hsl(217, 100%, 80%);
+}
+#rrr {
+  border: 3px solid black;
+}
+footer {
+  height: 20rem;
+}
+.enorme, .menu {
+  font-size: 2rem;
+  padding: 0 2rem;
+}
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.menu ul li {
+  border: 3px solid #ccc;
+  padding: .5rem .7rem;
+}
+.menu ul li:hover {
+  background-color: #ddd;
 }
