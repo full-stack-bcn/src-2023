@@ -1,0 +1,10 @@
+h1 {
+  font-size: 18pt;
+}
+h1 .moderno {
+  background-color: black;
+  color: white;
+}
+h1 strong {
+  background-color: grey;
+}
