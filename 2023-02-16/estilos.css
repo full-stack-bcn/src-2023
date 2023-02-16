@@ -19,9 +19,22 @@ h1 strong {
   height: 3rem;
   border: 1px solid red;
   font-size: 1rem;
-  padding: 1rem;
-  padding-top: 3rem;
+  padding: 0.5rem;
+
   background-color: hsl(217, 100%, 80%);
+
+   /* Resetea la caja de referencia a este elemento */
+   position: relative;
+}
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #rrr {
   border: 3px solid black;
@@ -58,3 +71,4 @@ table th, table td {
 table th {
   text-align: left;
 }
+
