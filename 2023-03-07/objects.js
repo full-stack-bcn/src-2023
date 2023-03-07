@@ -5,9 +5,9 @@ let obj = {
   a: 1,
   b: false,
   c: "hola",
-  subobj: {
+  "subobj": {
     d: null,
-    e: undefined
+    e: undefined,
   }
 };
 

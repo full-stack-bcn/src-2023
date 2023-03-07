@@ -1,0 +1,10 @@
+{
+  "firstName": "James",
+  "secondName": "Bond",
+  "age": 28,
+  "missions": [
+    "Miami",
+    "Berlin",
+    "Acapulco"
+  ]
+}
