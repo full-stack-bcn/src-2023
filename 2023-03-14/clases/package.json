@@ -1,0 +1,8 @@
+{
+  "name": "clases",
+  "module": "clases.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^0.5.0"
+  }
+}
