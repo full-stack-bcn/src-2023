@@ -1,0 +1,48 @@
+:root {
+  font-family: Inter, sans-serif;
+}
+#todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+#todo-list li {
+  padding: .6rem 1rem;
+  border: 1px solid lightgrey;
+  border-top: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+#todo-list li span {
+  flex: 1;
+}
+#todo-list li .boton-borrar {
+  display: none;
+}
+#todo-list li:hover .boton-borrar {
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  padding-bottom: .1rem;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+#todo-list li:hover .boton-borrar:hover {
+  color: white;
+  background-color: red;
+}
+#todo-list li:hover {
+  background-color: #f7f7f7;
+}
+#todo-list li:first-child {
+  border-top: 1px solid lightgrey;
+}
+#todo-list li input[type=checkbox] {
+  margin-right: 1rem;
+}
+#todo-list li .checked {
+  text-decoration: line-through;
+}
