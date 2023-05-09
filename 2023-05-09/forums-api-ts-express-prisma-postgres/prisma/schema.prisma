@@ -1,0 +1,33 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Forum {
+  id        Int       @id @default(autoincrement())
+  name      String    @unique
+  createdAt DateTime  @default(now())
+  messages  Message[]
+}
+
+model User {
+  id        Int       @id @default(autoincrement())
+  nick      String    @unique
+  fullName  String?
+  createdAt DateTime  @default(now())
+  admin     Boolean   @default(false)
+  messages  Message[]
+}
+
+model Message {
+  id      Int    @id @default(autoincrement())
+  text    String
+  userId  Int
+  user    User   @relation(fields: [userId], references: [id])
+  forumId Int
+  forum   Forum  @relation(fields: [forumId], references: [id])
+}
