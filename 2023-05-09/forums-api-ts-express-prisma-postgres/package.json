@@ -4,13 +4,16 @@
   "description": "Un servidor de API para un foro hecho en Express, Typescript, Prisma con Postgres",
   "main": "src/server.ts",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon src/server.ts"
+  },
   "keywords": [],
   "author": "pauek",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^4.14.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "morgan": "^1.10.0"
   },
