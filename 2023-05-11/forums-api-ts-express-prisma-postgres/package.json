@@ -5,7 +5,9 @@
   "main": "src/server.ts",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/server.ts"
+    "dev": "nodemon src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "pauek",

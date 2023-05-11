@@ -1,6 +1,7 @@
-import { Router } from "express";
+import { Request, Router } from "express";
 import prisma from "./prisma-client.js";
 import { errorChecked } from "./utils.js";
+import messagesRouter from "./messages.js";
 
 const router = Router();
 
@@ -20,12 +21,20 @@ router.post(
   })
 );
 
+export interface RequestWithForumId extends Request {
+  forumId: number;
+}
+router.use("/:id", async (req: RequestWithForumId, res, next) => {
+  const { id } = req.params;
+  req.forumId = Number(id);
+  next();
+});
+
 router.get(
   "/:id",
-  errorChecked(async (req, res) => {
-    const { id } = req.params;
+  errorChecked(async (req: RequestWithForumId, res) => {
     const forum = await prisma.forum.findUniqueOrThrow({
-      where: { id: Number(id) },
+      where: { id: req.forumId },
     });
     res.status(200).json(forum);
   })
@@ -33,10 +42,9 @@ router.get(
 
 router.put(
   "/:id",
-  errorChecked(async (req, res) => {
-    const { id } = req.params;
+  errorChecked(async (req: RequestWithForumId, res) => {
     const updatedForum = await prisma.forum.update({
-      where: { id: Number(id) },
+      where: { id: req.forumId },
       data: req.body,
     });
     res.status(200).json(updatedForum);
@@ -45,16 +53,14 @@ router.put(
 
 router.delete(
   "/:id",
-  errorChecked(async (req, res, next) => {
-    const { id } = req.params;
+  errorChecked(async (req: RequestWithForumId, res) => {
     const deletedForum = await prisma.forum.delete({
-      where: { id: Number(id) },
+      where: { id: req.forumId },
     });
     res.status(200).json(deletedForum);
   })
 );
 
-// GET /forums/:id/messages
-// POST /forums/:id/messages
+router.use("/:id/messages", messagesRouter);
 
 export default router;
