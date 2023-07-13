@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hello/components/my_action_chip.dart';
+import 'package:hello/components/number_circle.dart';
 
 void main() {
   runApp(
-    MyApp(),
+    const MyApp(),
   );
 }
 
@@ -13,38 +15,34 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.black,
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text(
-              "hola que tal " * 3,
-              style: const TextStyle(
-                backgroundColor: Colors.pink,
-                fontSize: 40,
-                color: Colors.white,
-                decoration: TextDecoration.underline,
-                decorationColor: Colors.green,
-                decorationThickness: 2,
+            Padding(
+              padding: EdgeInsets.all(24.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  NumberCircle(number: 1, color: Colors.blue),
+                  NumberCircle(number: 2, color: Colors.green),
+                  NumberCircle(number: 3, color: Colors.red),
+                ],
               ),
             ),
-            const SizedBox(height: 10),
-            Container(
-              width: 300,
-              height: 200,
-              color: Colors.blue,
-            ),
-            Align(
-              alignment: Alignment.centerRight,
-              child: Icon(
-                Icons.delete,
-                size: 80,
-                color: Colors.white,
-              ),
-            ),
+            Row(
+              children: [
+                MyActionChip(texto: "Add friend"),
+                MyActionChip(
+                  texto: "Delete",
+                  color: Colors.red,
+                  icon: Icons.remove,
+                ),
+              ],
+            )
           ],
         ),
       ),
